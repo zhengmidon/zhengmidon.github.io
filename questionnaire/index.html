@@ -30,19 +30,24 @@
 			<section itemprop="entry-text">
 
 <h2 id="abstract">提要</h2>
-<p>非常感谢您参与我们的问卷调查！我们是来自厦门大学自然语言处理实验室的研究人员，我们自主构建了一个歌仔戏合成系统，目前正在测试它的性能。 以下的40个音频有的是机器合成的，有的是歌仔戏演员演唱的，我们列出了它们每一段对应的唱词和闽南语拼音，请您听取每一段音频，并从三个方面为它们打分：</p>
+<p>非常感谢您参与我们的问卷调查！为了保证测试结果的准确性，建议您<b>佩戴耳机</b>。我们是来自厦门大学自然语言处理实验室的研究人员，我们自主构建了一个歌仔戏合成系统，目前正在测试它的性能。 以下的40个音频有的是机器合成的，有的是歌仔戏演员演唱的，我们列出了它们每一段对应的唱词和闽南语拼音，请您听取每一段音频，并从三个方面为它们打分：</p>
 <ul>
-	<li>发音准确度：您觉得音频的闽南语发音准不准，<b>越准分数越高</b></li>
+	<li>音准度：您觉得音频的闽南语发音准不准，<b>越准分数越高</b></li>
 	<li>自然度：您觉得音频是人唱的还是机器合成的，<b>越接近人唱的分数越高</b></li>
 	<li>悦耳度：您觉得音频中的内容悦耳动听吗，<b>越动听分数越高</b></li>
 </ul>
 <br>
+<table>
+	<tbody>
+		<td style="text-align: center;">填写您的手机号后四位(仅用于测试结果文件命名):</td><td><input type="text" id="phoneNum" style="position: relative; top: 5px" placeholder="手机号后四位.."></td>
+	</tbody>
+</table>
 <form id="qForm">
 	<ol>
 		<li><ruby>这么说来很不单纯，你陪我看海<rt style="font-size: 15px;">zhè me shuō lái hěn bú dān chún, nǐ péi wǒ kàn hǎi</rt></ruby></li>
 		<audio controls="controls"><source src="https://hifisinger.github.io/newaudio/Recording/7000000184.wav" autoplay="">Your browser does not support the audio element.</audio>
 		<p>
-		发音准确度:
+		音准度:
 		<input type="radio" name="sample_1_acc" value="1" />1&emsp;
 		<input type="radio" name="sample_1_acc" value="2" />2&emsp;
 		<input type="radio" name="sample_1_acc" value="3" />3&emsp;
@@ -69,7 +74,7 @@
 		<li><ruby>宁静的夏天，天空中繁星点点<rt style="font-size: 15px;">níng jìng de xià tiān, tiān kōng zhōng fán xīng diǎn diǎn</rt></ruby></li>
 		<audio controls="controls"><source src="https://hifisinger.github.io/newaudio/Recording/7000000184.wav" autoplay="">Your browser does not support the audio element.</audio>
 		<p>
-		发音准确度:
+		音准度:
 		<input type="radio" name="sample_2_acc" value="1" />1&emsp;
 		<input type="radio" name="sample_2_acc" value="2" />2&emsp;
 		<input type="radio" name="sample_2_acc" value="3" />3&emsp;
@@ -94,7 +99,7 @@
 		</p>
 	</ol>
 
-	<button id="save" style="width: 200px; height: 80px; font-size: 30px;" type="button">提交</button>
+	<button id="save" style="width: 150px; height: 60px; font-size: 30px;" type="button">提交</button>
 </form>
 
 			</section>
@@ -188,7 +193,7 @@
 				}
 			}
 			if (!accAnswerd) {
-				unanswerd.push(`第${i}题：发音准确度`);
+				unanswerd.push(`第${i}题：音准度`);
 			}
 		}
 
@@ -226,17 +231,22 @@
 
 		if (unanswerd.length > 0) {
 			unanswerd.sort();
-			alert(`提交未成功，请完成以下题目：\n${unanswerd.join('\n')}`);
+			alert(`提交未成功，请完成以下题目后重新提交：\n${unanswerd.join('\n')}`);
 		}
 		else {
-			console.log(allScore);
+			var phone_num = document.querySelector("#phoneNum").value;
+			if (phone_num == null || phone_num == "") {
+				alert("请填写手机号后四位后重新提交！");
+			}
+			else {
 			var blob = new Blob([JSON.stringify(allScore, null, 2)], {type : 'application/json'});
-      		saveAs(blob, "test.json");
+      		saveAs(blob, `${phone_num}.json`);
 			// var fso = server.CreateObject("Scripting.FileSystemObject");
 			// var f1 = fso.createtextfile("./myjstest.txt",true);
 			// f1.write(allScore);
 			// f1.close();
 			alert("提交成功！ 再次感谢您参与我们的问卷调查！");
+			}
 		}
 	}
 
