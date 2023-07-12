@@ -43,26 +43,26 @@
 		<audio controls="controls"><source src="https://hifisinger.github.io/newaudio/Recording/7000000184.wav" autoplay="">Your browser does not support the audio element.</audio>
 		<p>
 		发音准确度:
-		<input type="radio" name="sample_1_acc" value="1" />1&emsp;&emsp;
-		<input type="radio" name="sample_1_acc" value="2" />2&emsp;&emsp;
-		<input type="radio" name="sample_1_acc" value="3" />3&emsp;&emsp;
-		<input type="radio" name="sample_1_acc" value="4" />4&emsp;&emsp;
+		<input type="radio" name="sample_1_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_1_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_1_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_1_acc" value="4" />4&emsp;
 		<input type="radio" name="sample_1_acc" value="5" />5
 		</p>
 		<p>
 		自然度:
-		<input type="radio" name="sample_1_nat" value="1" />1&emsp;&emsp;
-		<input type="radio" name="sample_1_nat" value="2" />2&emsp;&emsp;
-		<input type="radio" name="sample_1_nat" value="3" />3&emsp;&emsp;
-		<input type="radio" name="sample_1_nat" value="4" />4&emsp;&emsp;
+		<input type="radio" name="sample_1_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_1_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_1_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_1_nat" value="4" />4&emsp;
 		<input type="radio" name="sample_1_nat" value="5" />5
 		</p>
 		<p>
 		悦耳度:
-		<input type="radio" name="sample_1_exp" value="1" />1&emsp;&emsp;
-		<input type="radio" name="sample_1_exp" value="2" />2&emsp;&emsp;
-		<input type="radio" name="sample_1_exp" value="3" />3&emsp;&emsp;
-		<input type="radio" name="sample_1_exp" value="4" />4&emsp;&emsp;
+		<input type="radio" name="sample_1_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_1_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_1_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_1_exp" value="4" />4&emsp;
 		<input type="radio" name="sample_1_exp" value="5" />5
 		</p>
 
@@ -70,26 +70,26 @@
 		<audio controls="controls"><source src="https://hifisinger.github.io/newaudio/Recording/7000000184.wav" autoplay="">Your browser does not support the audio element.</audio>
 		<p>
 		发音准确度:
-		<input type="radio" name="sample_2_acc" value="1" />1&emsp;&emsp;
-		<input type="radio" name="sample_2_acc" value="2" />2&emsp;&emsp;
-		<input type="radio" name="sample_2_acc" value="3" />3&emsp;&emsp;
-		<input type="radio" name="sample_2_acc" value="4" />4&emsp;&emsp;
+		<input type="radio" name="sample_2_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_2_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_2_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_2_acc" value="4" />4&emsp;
 		<input type="radio" name="sample_2_acc" value="5" />5
 		</p>
 		<p>
 		自然度:
-		<input type="radio" name="sample_2_nat" value="1" />1&emsp;&emsp;
-		<input type="radio" name="sample_2_nat" value="2" />2&emsp;&emsp;
-		<input type="radio" name="sample_2_nat" value="3" />3&emsp;&emsp;
-		<input type="radio" name="sample_2_nat" value="4" />4&emsp;&emsp;
+		<input type="radio" name="sample_2_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_2_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_2_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_2_nat" value="4" />4&emsp;
 		<input type="radio" name="sample_2_nat" value="5" />5
 		</p>
 		<p>
 		悦耳度:
-		<input type="radio" name="sample_2_exp" value="1" />1&emsp;&emsp;
-		<input type="radio" name="sample_2_exp" value="2" />2&emsp;&emsp;
-		<input type="radio" name="sample_2_exp" value="3" />3&emsp;&emsp;
-		<input type="radio" name="sample_2_exp" value="4" />4&emsp;&emsp;
+		<input type="radio" name="sample_2_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_2_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_2_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_2_exp" value="4" />4&emsp;
 		<input type="radio" name="sample_2_exp" value="5" />5
 		</p>
 	</ol>
@@ -231,7 +231,7 @@
 		else {
 			console.log(allScore);
 			var blob = new Blob([JSON.stringify(allScore, null, 2)], {type : 'application/json'});
-      		saveAs(blob, "文件导出测试.json");
+      		saveAs(blob, "test.json");
 			// var fso = server.CreateObject("Scripting.FileSystemObject");
 			// var f1 = fso.createtextfile("./myjstest.txt",true);
 			// f1.write(allScore);
