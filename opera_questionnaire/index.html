@@ -625,10 +625,10 @@ ps:由于网页挂在github上，所以音频加载可能比较慢，稍等数�
 					break;
 				}
 			}
-			if (!expAnswerd || i <= 15) {
+			if (!expAnswerd && i <= 15) {
 				unanswerd.push(`第${i}题：悦耳度`);
 			}
-			else if (!expAnswerd || i > 15) {
+			else if (!expAnswerd && i > 15) {
 				unanswerd.push(`第${i}题`);
 			}
 		}
