@@ -151,7 +151,7 @@ ps:由于网页挂在github上，所以音频加载可能比较慢，稍等数�
 		<input type="radio" name="sample_4_exp" value="5" />5
 		</p>
 
-		<li><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_0.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<li><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm-0.wav" autoplay="">Your browser does not support the audio element.</audio></li>
 		<p>
 		音准度:
 		<input type="radio" name="sample_5_acc" value="1" />1&emsp;
@@ -256,7 +256,7 @@ ps:由于网页挂在github上，所以音频加载可能比较慢，稍等数�
 		<input type="radio" name="sample_8_exp" value="5" />5
 		</p>
 
-		<li><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_1.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<li><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm-1.wav" autoplay="">Your browser does not support the audio element.</audio></li>
 		<p>
 		音准度:
 		<input type="radio" name="sample_9_acc" value="1" />1&emsp;
@@ -361,7 +361,7 @@ ps:由于网页挂在github上，所以音频加载可能比较慢，稍等数�
 		<input type="radio" name="sample_12_exp" value="5" />5
 		</p>
 
-		<li><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_2.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<li><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm-2.wav" autoplay="">Your browser does not support the audio element.</audio></li>
 		<p>
 		音准度:
 		<input type="radio" name="sample_13_acc" value="1" />1&emsp;
@@ -582,7 +582,7 @@ ps:由于网页挂在github上，所以音频加载可能比较慢，稍等数�
 	function checkIntact() {
 		var allScore = {};
 		var unanswerd = [];
-		for (var i=1; i<=30; i++) {
+		for (var i=1; i<=15; i++) {
 			var accSampleName = `sample_${i}_acc`;
 			var accRadioSample = document.getElementsByName(accSampleName);
 			var accAnswerd = false;
@@ -598,7 +598,7 @@ ps:由于网页挂在github上，所以音频加载可能比较慢，稍等数�
 			}
 		}
 
-		for (var i=1; i<=30; i++) {
+		for (var i=1; i<=15; i++) {
 			var natSampleName = `sample_${i}_nat`;
 			var natRadioSample = document.getElementsByName(natSampleName);
 			var natAnswerd = false;
@@ -614,7 +614,7 @@ ps:由于网页挂在github上，所以音频加载可能比较慢，稍等数�
 			}
 		}
 
-		for (var i=1; i<=30; i++) {
+		for (var i=1; i<=20; i++) {
 			var expSampleName = `sample_${i}_exp`;
 			var expRadioSample = document.getElementsByName(expSampleName);
 			var expAnswerd = false;
@@ -625,8 +625,11 @@ ps:由于网页挂在github上，所以音频加载可能比较慢，稍等数�
 					break;
 				}
 			}
-			if (!expAnswerd) {
+			if (!expAnswerd || i <= 15) {
 				unanswerd.push(`第${i}题：悦耳度`);
+			}
+			else if (!expAnswerd || i > 15) {
+				unanswerd.push(`第${i}题`);
 			}
 		}
 
