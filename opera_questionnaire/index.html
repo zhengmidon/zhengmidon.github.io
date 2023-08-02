@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.66.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+<!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">-->
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/skeleton.css">
+<link rel="stylesheet" href="../css/custom.css">
+<script src="../js/FileSaver.js"></script>
+<script src="../js/jquery-3.7.0.min.js"></script>
+<link rel="alternate" href="index.xml" type="application/rss+xml" title="Speech Research">
+<title>歌仔戏调查问卷</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="https://schema.org/BlogPosting">
+            <h1 class="entry-title" itemprop="headline">歌仔戏合成质量评估调查问卷</h1>
+			
+			<section itemprop="entry-text">
+
+<h2 id="abstract">提要</h2>
+<p>为了保证测试结果的准确性，建议您<b>佩戴耳机</b>。 
+本问卷由两部分组成，第一部分是关于合成京剧的打分题，第二部分是合成歌仔戏的偏好题。完成问卷提交后浏览器会提示下载一个<b>json文件</b>，请下载这个文件并将它分享给郑美镇，谢谢!
+ps:由于网页挂在github上，所以音频加载可能比较慢，稍等数秒即可</p>
+<p>填写您的手机号后四位(仅用于测试结果文件命名):<input type="text" id="phoneNum" placeholder="手机号后四位.."></p>
+<h3>第一部分：京剧打分题</h3>
+<p>以下有3个京剧唱段，每个唱段有5个版本，它们有的是机器合成的，有的是真实录音。我们列出了每一个唱段对应的唱词，请您听取每一个版本的音频，并从三个方面为它们打分：</p>
+<ul>
+	<li>音准度：您觉得音频的发音准不准或者清晰不清晰，<b>越准或越清晰分数越高</b></li>
+	<li>自然度：您觉得音频是人唱的还是机器合成的，<b>越接近人唱的分数越高</b></li>
+	<li>悦耳度：您觉得音频中的内容悦耳动听吗，<b>越动听分数越高</b></li>
+</ul>
+<br>
+<hr />
+<form id="qForm">
+	<ol>
+		<ruby><b>唱段一</b>：我本是一穷儒啊</ruby>
+		<li><audio controls="controls"><source src="../audio/jingju/gt/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_0.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_1_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_1_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_1_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_1_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_1_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_1_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_1_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_1_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_1_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_1_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_1_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_1_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_1_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_1_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_1_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/fastspeech2/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_0.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		<p>
+		音准度:
+		<input type="radio" name="sample_2_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_2_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_2_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_2_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_2_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_2_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_2_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_2_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_2_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_2_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_2_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_2_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_2_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_2_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_2_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/diffsinger/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_0.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_3_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_3_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_3_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_3_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_3_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_3_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_3_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_3_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_3_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_3_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_3_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_3_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_3_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_3_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_3_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/ours/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_0.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_4_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_4_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_4_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_4_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_4_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_4_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_4_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_4_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_4_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_4_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_4_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_4_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_4_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_4_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_4_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_0.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_5_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_5_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_5_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_5_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_5_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_5_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_5_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_5_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_5_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_5_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_5_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_5_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_5_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_5_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_5_exp" value="5" />5
+		</p>
+
+		<ruby><b>唱段二</b>：冒犯了老太师府门庭</ruby>
+		<li><audio controls="controls"><source src="../audio/jingju/ours/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_1.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_6_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_6_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_6_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_6_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_6_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_6_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_6_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_6_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_6_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_6_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_6_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_6_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_6_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_6_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_6_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/diffsinger/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_1.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_7_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_7_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_7_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_7_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_7_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_7_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_7_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_7_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_7_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_7_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_7_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_7_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_7_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_7_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_7_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/gt/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_1.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_8_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_8_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_8_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_8_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_8_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_8_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_8_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_8_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_8_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_8_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_8_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_8_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_8_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_8_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_8_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_1.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_9_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_9_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_9_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_9_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_9_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_9_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_9_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_9_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_9_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_9_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_9_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_9_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_9_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_9_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_9_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/fastspeech2/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_1.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_10_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_10_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_10_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_10_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_10_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_10_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_10_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_10_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_10_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_10_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_10_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_10_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_10_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_10_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_10_exp" value="5" />5
+		</p>
+
+		<ruby><b>唱段三</b>：念卑人结发糟糠</ruby>
+		<li><audio controls="controls"><source src="../audio/jingju/gt/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_2.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_11_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_11_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_11_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_11_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_11_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_11_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_11_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_11_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_11_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_11_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_11_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_11_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_11_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_11_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_11_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/ours/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_2.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_12_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_12_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_12_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_12_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_12_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_12_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_12_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_12_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_12_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_12_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_12_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_12_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_12_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_12_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_12_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_2.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_13_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_13_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_13_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_13_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_13_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_13_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_13_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_13_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_13_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_13_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_13_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_13_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_13_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_13_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_13_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/diffsinger/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_2.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_14_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_14_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_14_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_14_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_14_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_14_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_14_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_14_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_14_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_14_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_14_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_14_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_14_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_14_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_14_exp" value="5" />5
+		</p>
+
+		<li><audio controls="controls"><source src="../audio/jingju/fastspeech2/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_2.wav" autoplay="">Your browser does not support the audio element.</audio></li>
+		<p>
+		音准度:
+		<input type="radio" name="sample_15_acc" value="1" />1&emsp;
+		<input type="radio" name="sample_15_acc" value="2" />2&emsp;
+		<input type="radio" name="sample_15_acc" value="3" />3&emsp;
+		<input type="radio" name="sample_15_acc" value="4" />4&emsp;
+		<input type="radio" name="sample_15_acc" value="5" />5
+		</p>
+		<p>
+		自然度:
+		<input type="radio" name="sample_15_nat" value="1" />1&emsp;
+		<input type="radio" name="sample_15_nat" value="2" />2&emsp;
+		<input type="radio" name="sample_15_nat" value="3" />3&emsp;
+		<input type="radio" name="sample_15_nat" value="4" />4&emsp;
+		<input type="radio" name="sample_15_nat" value="5" />5
+		</p>
+		<p>
+		悦耳度:
+		<input type="radio" name="sample_15_exp" value="1" />1&emsp;
+		<input type="radio" name="sample_15_exp" value="2" />2&emsp;
+		<input type="radio" name="sample_15_exp" value="3" />3&emsp;
+		<input type="radio" name="sample_15_exp" value="4" />4&emsp;
+		<input type="radio" name="sample_15_exp" value="5" />5
+		</p>
+
+		<h3>第二部分：歌仔戏偏好题</h3>
+		<p>以下有5个歌仔戏唱段，每个唱段有A、B两个版本，我们列出了每一个唱段对应的唱词，请您听取每一个版本的音频，并从三个方面为它们打分，选择一个您认为生成效果比较好的版本。如果您觉得它俩没差别，您也可以选择第三个选项</i></p>
+		<br>
+
+		<li><ruby>我怎忍心割舍啊</ruby></li>
+		<label>A:</label>
+		<audio controls="controls"><source src="../audio/hok_pre/[平贵别窑-二次战鼓-薛平贵-武生-我怎忍心割舍啊-杂碎调04][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio>
+		<label>B:</label>
+		<audio controls="controls"><source src="../audio/vanilla/[平贵别窑-二次战鼓-薛平贵-武生-我怎忍心割舍啊-杂碎调04][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id.wav" autoplay="">Your browser does not support the audio element.</audio>
+		<p>
+		<input type="radio" name="sample_16_exp" value="A" />A&emsp;
+		<input type="radio" name="sample_16_exp" value="B" />B&emsp;
+		<input type="radio" name="sample_16_exp" value="C" />没差啦
+		</p>
+
+		<li><ruby>二次战鼓已催过</ruby></li>
+		<label>A:</label>
+		<audio controls="controls"><source src="../audio/vanilla/[平贵别窑-二次战鼓-薛平贵-武生-二次战鼓已催过-杂碎调01][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id.wav" autoplay="">Your browser does not support the audio element.</audio>
+		<label>B:</label>
+		<audio controls="controls"><source src="../audio/hok_pre/[平贵别窑-二次战鼓-薛平贵-武生-二次战鼓已催过-杂碎调01][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio>
+		<p>
+		<input type="radio" name="sample_17_exp" value="A" />A&emsp;
+		<input type="radio" name="sample_17_exp" value="B" />B&emsp;
+		<input type="radio" name="sample_17_exp" value="C" />没差啦
+		</p>
+
+		<li><ruby>笙歌同调琴瑟同音</ruby></li>
+		<label>A:</label>
+		<audio controls="controls"><source src="../audio/vanilla/[沈园情-从今你我影随身-唐婉-闺门旦-笙歌同调琴瑟同音-梅花调02][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id.wav" autoplay="">Your browser does not support the audio element.</audio>
+		<label>B:</label>
+		<audio controls="controls"><source src="../audio/hok_pre/[沈园情-从今你我影随身-唐婉-闺门旦-笙歌同调琴瑟同音-梅花调02][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio>
+		<p>
+		<input type="radio" name="sample_18_exp" value="A" />A&emsp;
+		<input type="radio" name="sample_18_exp" value="B" />B&emsp;
+		<input type="radio" name="sample_18_exp" value="C" />没差啦
+		</p>
+
+		<li><ruby>你本是杨家传宗将</ruby></li>
+		<label>A:</label>
+		<audio controls="controls"><source src="../audio/hok_pre/[杨门女将-你本是杨家传宗将-穆桂英-刀马旦-你本是杨家传宗将-小哭01][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio>
+		<label>B:</label>
+		<audio controls="controls"><source src="../audio/vanilla/[杨门女将-你本是杨家传宗将-穆桂英-刀马旦-你本是杨家传宗将-小哭01][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id.wav" autoplay="">Your browser does not support the audio element.</audio>
+		<p>
+		<input type="radio" name="sample_19_exp" value="A" />A&emsp;
+		<input type="radio" name="sample_19_exp" value="B" />B&emsp;
+		<input type="radio" name="sample_19_exp" value="C" />没差啦
+		</p>
+
+		<li><ruby>看来此冤今生难得报</ruby></li>
+		<label>A:</label>
+		<audio controls="controls"><source src="../audio/vanilla/[千古长恨-此去云南路千里-赵美玉-闺门旦-看来此冤今生难得报-七字调03][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id.wav" autoplay="">Your browser does not support the audio element.</audio>
+		<label>B:</label>
+		<audio controls="controls"><source src="../audio/hok_pre/[千古长恨-此去云南路千里-赵美玉-闺门旦-看来此冤今生难得报-七字调03][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio>
+		<p>
+		<input type="radio" name="sample_20_exp" value="A" />A&emsp;
+		<input type="radio" name="sample_20_exp" value="B" />B&emsp;
+		<input type="radio" name="sample_20_exp" value="C" />没差啦
+		</p>
+
+	</ol>
+
+	<button id="save" style="width: 150px; height: 60px; font-size: 30px;" type="button">提交</button>
+</form>
+
+			</section>
+		</article>
+	</main>
+
+
+</div>
+
+<!--
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139981676-1', 'auto');
+	ga('send', 'pageview');
+</script>
+-->
+
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>-->
+
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         HTML: ["input/TeX","output/HTML-CSS"],
+         TeX: {
+                Macros: {
+                         bm: ["\\boldsymbol{#1}", 1],
+                         argmax: ["\\mathop{\\rm arg\\,max}\\limits"],
+                         argmin: ["\\mathop{\\rm arg\\,min}\\limits"]},
+                extensions: ["AMSmath.js","AMSsymbols.js"],
+                equationNumbers: { autoNumber: "AMS" } },
+         extensions: ["tex2jax.js"],
+         jax: ["input/TeX","output/HTML-CSS"],
+         tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true },
+         "HTML-CSS": { availableFonts: ["TeX"],
+                       linebreaks: { automatic: true } }
+     });
+ </script>
+
+ <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+ </script>
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+<script type="text/javascript">
+	document.querySelector('#save').addEventListener('click', checkIntact);
+
+       function fakeClick(obj) { 
+       　　var ev = document.createEvent("MouseEvents");
+　　　　ev.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+　　　　obj.dispatchEvent(ev);
+　 }
+
+　　function exportRaw(name, data) {
+　　　　var urlObject = window.URL || window.webkitURL || window;
+　　　　var export_blob = new Blob([data]);
+　　　　var save_link = document.createElementNS("http://www.w3.org/1999/xhtml", "a")
+　　　　save_link.href = urlObject.createObjectURL(export_blob);
+　　　　save_link.download = name;
+　　　　fakeClick(save_link);
+　　}
+
+　　function saveFile(){
+　　　　var inValue  = document.querySelector('#qForm');
+		console.log(inValue)
+　　　　exportRaw('test.txt', inValue);
+　　}
+
+	function checkIntact() {
+		var allScore = {};
+		var unanswerd = [];
+		for (var i=1; i<=30; i++) {
+			var accSampleName = `sample_${i}_acc`;
+			var accRadioSample = document.getElementsByName(accSampleName);
+			var accAnswerd = false;
+			for (var j=0; j<accRadioSample.length; j++) {
+				if (accRadioSample[j].checked) {
+					allScore[accSampleName] = accRadioSample[j].value;
+					accAnswerd = true;
+					break;
+				}
+			}
+			if (!accAnswerd) {
+				unanswerd.push(`第${i}题：音准度`);
+			}
+		}
+
+		for (var i=1; i<=30; i++) {
+			var natSampleName = `sample_${i}_nat`;
+			var natRadioSample = document.getElementsByName(natSampleName);
+			var natAnswerd = false;
+			for (var j=0; j<natRadioSample.length; j++) {
+				if (natRadioSample[j].checked) {
+					allScore[natSampleName] = natRadioSample[j].value;
+					natAnswerd = true;
+					break;
+				}
+			}
+			if (!natAnswerd) {
+				unanswerd.push(`第${i}题：自然度`);
+			}
+		}
+
+		for (var i=1; i<=30; i++) {
+			var expSampleName = `sample_${i}_exp`;
+			var expRadioSample = document.getElementsByName(expSampleName);
+			var expAnswerd = false;
+			for (var j=0; j<expRadioSample.length; j++) {
+				if (expRadioSample[j].checked) {
+					allScore[expSampleName] = expRadioSample[j].value;
+					expAnswerd = true;
+					break;
+				}
+			}
+			if (!expAnswerd) {
+				unanswerd.push(`第${i}题：悦耳度`);
+			}
+		}
+
+		if (unanswerd.length > 0) {
+			unanswerd.sort();
+			alert(`提交未成功，请完成以下题目后重新提交：\n${unanswerd.join('\n')}`);
+		}
+		else {
+			var phone_num = document.querySelector("#phoneNum").value;
+			if (phone_num == null || phone_num == "") {
+				alert("请填写手机号后四位后重新提交！");
+			}
+			else {
+			var blob = new Blob([JSON.stringify(allScore, null, 2)], {type : 'application/json'});
+      		saveAs(blob, `${phone_num}.json`);
+			// var fso = server.CreateObject("Scripting.FileSystemObject");
+			// var f1 = fso.createtextfile("./myjstest.txt",true);
+			// f1.write(allScore);
+			// f1.close();
+			alert("提交成功！ 再次感谢您参与我们的问卷调查！");
+			}
+		}
+	}
+
+</script>
+</body>
+</html>
+
