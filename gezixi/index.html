@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.66.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/github.min.css">
+<link rel="stylesheet" href="../css/normalize.css">
+<link rel="stylesheet" href="../css/skeleton.css">
+<link rel="stylesheet" href="../css/custom.css">
+<link rel="alternate" href="index.xml" type="application/rss+xml" title="Speech Research">
+<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+<title>HiFiSinger: Towards High-Fidelity Neural Singing Voice Synthesis - Speech Research</title>
+</head>
+<body>
+
+<div class="container">
+
+	<header role="banner">
+		
+
+	</header>
+
+
+	<main role="main">
+		<article itemscope itemtype="https://schema.org/BlogPosting">
+            <h1 class="entry-title" itemprop="headline">HiFiSinger: Towards High-Fidelity Neural Singing Voice Synthesis</h1>
+			
+			<section itemprop="entry-text">
+				<br>
+<iframe src="../img/gezixi/model.pdf"  width="90%" height="40px"  alt="HiFiSinger_pipline" ></iframe>
+
+<h2 id="authors">Authors</h2>
+<ul>
+<!-- <li>Microsoft STC Asia & Microsoft Research Asia  -->
+<li>Meizhen Zheng (Xiamen University) <a href="mailto:midon@stu.xmu.edu.cn">midon@stu.xmu.edu.cn</a></li>
+<li>Xiaodong Shi* (Xiamen University) <a href="mailto:mandel@xmu.edu.cn">mandel@xmu.edu.cn</a></li>
+<li>Peng Bai (Xiamen University) <a href="mailto:baipeng@stu.xmu.edu.cn">baipeng@stu.xmu.edu.cn</a></li>
+</ul>
+<small>*Corresponding author</small>
+<h2 id="abstract">Abstract</h2>
+<p>Chinese opera is an important component of traditional Chinese culture and one of the most popular stage arts among the Chinese people. Research for automatic opera voice synthesis(OVS) has high artistic and commercial value. However, compared to sufficient research on the similar singing voice synthesis(SVS) task, there is little research on opera voice synthesis. In this situation, we build a precisely labeled audio-text alignment dataset of Gezi opera, one of the Chinese operas, and train an acoustic model for Gezi opera synthesis based on this dataset. We analyze the differences between Chinese opera and popular music for which we formulate specific data annotation strategies and adapt the acoustic model architecture. In addition, we find the similarity between Hokkien speech and Gezi opera and propose a speech-assisted training strategy to improve our model's performance. The experimental results show that our model outperforms the SOTA model in the SVS task on the Gezi opera generation task. The extended experiment further verifies that our model has good performance on generation tasks of other operas such as the Peking opera.</p>
+<h2 id="abstract">Contents</h2>
+<b><a href="#audio-samples">Audio Samples</a></b><br>
+<a href="#audio-quality">1.1 Audio Quality</a><br>
+<b><a href="#extended-studies">Extended Studies</a></b><br>
+<a href="#Speech-assisted">2.1 Speech-assisted training</a><br>
+<a href="#peking-synthesis">2.2 Peking synthesis</a><br>
+<b><a href="#dataset-info">Dataset Info</a></b><br>
+
+<p><span id="audio-samples" name="audio-samples"></span></p>
+<h2 id="audio-samples">Audio Samples</h2>
+<p><span id="audio-quality" name="audio-quality"></span></p>
+<h3 id="audio-quality">Audio Quality</h3>
+<img src="../img/gezixi/exp_results.png" width="60%" height="40px">
+<br>
+
+<p><ruby>我怎忍心割舍啊<rt style="font-size: 15px;">ua tsai lim sim kuah sia ah</rt></ruby></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Recording</th>
+<th style="text-align: center">Diffsinger</th>
+<th style="text-align: center">Fastspeech2</th>
+<th style="text-align: center">Visinger2</th>
+<th style="text-align: center">Ours</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/gt/[平贵别窑-二次战鼓-薛平贵-武生-我怎忍心割舍啊-杂碎调04][G]-gezixi_fs2midi_per_fm_adv_m_discs_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/diffsinger/[平贵别窑-二次战鼓-薛平贵-武生-我怎忍心割舍啊-杂碎调04][P]-gezixi_diffsinger_tl_np.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/fastspeech2/[平贵别窑-二次战鼓-薛平贵-武生-我怎忍心割舍啊-杂碎调04][P]-gezixi_fs2midi_tl_np.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/visinger2/平贵别窑-二次战鼓-薛平贵-武生-我怎忍心割舍啊-杂碎调04.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/hok_pre/[平贵别窑-二次战鼓-薛平贵-武生-我怎忍心割舍啊-杂碎调04][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><ruby>看来此冤今生难得报<rt style="font-size: 15px;">khuann lai tshu uan kim sing lan tit poo</rt></ruby></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Recording</th>
+<th style="text-align: center">Diffsinger</th>
+<th style="text-align: center">Fastspeech2</th>
+<th style="text-align: center">Visinger2</th>
+<th style="text-align: center">Ours</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/gt/[千古长恨-此去云南路千里-赵美玉-闺门旦-看来此冤今生难得报-七字调03][G]-gezixi_fs2midi_per_fm_adv_m_discs_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/diffsinger/[千古长恨-此去云南路千里-赵美玉-闺门旦-看来此冤今生难得报-七字调03][P]-gezixi_diffsinger_tl_np.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/fastspeech2/[千古长恨-此去云南路千里-赵美玉-闺门旦-看来此冤今生难得报-七字调03][P]-gezixi_fs2midi_tl_np.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/visinger2/千古长恨-此去云南路千里-赵美玉-闺门旦-看来此冤今生难得报-七字调03.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/hok_pre/[千古长恨-此去云南路千里-赵美玉-闺门旦-看来此冤今生难得报-七字调03][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><ruby>好比万箭穿呃我心呐<rt style="font-size: 15px;">hok pi ban tsinn tshuan leh gua sim na</rt></ruby></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Recording</th>
+<th style="text-align: center">Diffsinger</th>
+<th style="text-align: center">Fastspeech2</th>
+<th style="text-align: center">Visinger2</th>
+<th style="text-align: center">Ours</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/gt/[三请樊梨花-双脚跪落啊妻灵前-薛丁山-小生-好比万箭穿呃我心哪-大哭调02][G]-gezixi_fs2midi_per_fm_adv_m_discs_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/diffsinger/[三请樊梨花-双脚跪落啊妻灵前-薛丁山-小生-好比万箭穿呃我心哪-大哭调02][P]-gezixi_diffsinger_tl_np.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/fastspeech2/[三请樊梨花-双脚跪落啊妻灵前-薛丁山-小生-好比万箭穿呃我心哪-大哭调02][P]-gezixi_fs2midi_tl_np.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/visinger2/三请樊梨花-双脚跪落啊妻灵前-薛丁山-小生-好比万箭穿呃我心哪-大哭调02.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/hok_pre/[三请樊梨花-双脚跪落啊妻灵前-薛丁山-小生-好比万箭穿呃我心哪-大哭调02][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><ruby>笙歌同调琴瑟同音<rt style="font-size: 15px;">sing ko tong tiau khim sik tong im</rt></ruby></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Recording</th>
+<th style="text-align: center">Diffsinger</th>
+<th style="text-align: center">Fastspeech2</th>
+<th style="text-align: center">Visinger2</th>
+<th style="text-align: center">Ours</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/gt/[沈园情-从今你我影随身-唐婉-闺门旦-笙歌同调琴瑟同音-梅花调02][G]-gezixi_fs2midi_per_fm_adv_m_discs_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/diffsinger/[沈园情-从今你我影随身-唐婉-闺门旦-笙歌同调琴瑟同音-梅花调02][P]-gezixi_diffsinger_tl_np.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/fastspeech2/[沈园情-从今你我影随身-唐婉-闺门旦-笙歌同调琴瑟同音-梅花调02][P]-gezixi_fs2midi_tl_np.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/visinger2/沈园情-从今你我影随身-唐婉-闺门旦-笙歌同调琴瑟同音-梅花调02.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/hok_pre/[沈园情-从今你我影随身-唐婉-闺门旦-笙歌同调琴瑟同音-梅花调02][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><ruby>你本是大宋栋梁臣<rt style="font-size: 15px;">li pun si tai song tong liong sin</rt></ruby></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Recording</th>
+<th style="text-align: center">Diffsinger</th>
+<th style="text-align: center">Fastspeech2</th>
+<th style="text-align: center">Visinger2</th>
+<th style="text-align: center">Ours</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/gt/[杨门女将-你本是杨家传宗将-穆桂英-刀马旦-你本是大宋栋梁臣-小哭02][G]-gezixi_fs2midi_per_fm_adv_m_discs_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/diffsinger/[杨门女将-你本是杨家传宗将-穆桂英-刀马旦-你本是大宋栋梁臣-小哭02][P]-gezixi_diffsinger_tl_np.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/fastspeech2/[杨门女将-你本是杨家传宗将-穆桂英-刀马旦-你本是大宋栋梁臣-小哭02][P]-gezixi_fs2midi_tl_np.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/visinger2/杨门女将-你本是杨家传宗将-穆桂英-刀马旦-你本是大宋栋梁臣-小哭02.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/hok_pre/[杨门女将-你本是杨家传宗将-穆桂英-刀马旦-你本是大宋栋梁臣-小哭02][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<h2 id="extended-studies">Extended Studies</h2>
+<h3 id="Speech-assisted">Speech-assisted training</h3>
+<br>
+<p><ruby>二次战鼓已催过<rt style="font-size: 15px;">li tshu tsian koo i tshui ke</rt></ruby></p>
+<table><thead>
+<tr>
+<th style="text-align: center">w/ speech-assisted</th>
+<th style="text-align: center">w/o speech-assisted</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/hok_pre/[平贵别窑-二次战鼓-薛平贵-武生-二次战鼓已催过-杂碎调01][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/vanilla/[平贵别窑-二次战鼓-薛平贵-武生-二次战鼓已催过-杂碎调01][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><ruby>看来此冤今生难得报<rt style="font-size: 15px;">khuann lai tshu uan kim sing lan tit poo</rt></ruby></p>
+<table><thead>
+<tr>
+<th style="text-align: center">w/ speech-assisted</th>
+<th style="text-align: center">w/o speech-assisted</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/hok_pre/[千古长恨-此去云南路千里-赵美玉-闺门旦-看来此冤今生难得报-七字调03][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/vanilla/[千古长恨-此去云南路千里-赵美玉-闺门旦-看来此冤今生难得报-七字调03][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><ruby>你本是杨家传宗将<rt style="font-size: 15px;">li pun si iunn ka thuan tsong tsiong</rt></ruby></p>
+<table><thead>
+<tr>
+<th style="text-align: center">w/ speech-assisted</th>
+<th style="text-align: center">w/o speech-assisted</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/hok_pre/[杨门女将-你本是杨家传宗将-穆桂英-刀马旦-你本是杨家传宗将-小哭01][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id_hok_pre.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/vanilla/[杨门女将-你本是杨家传宗将-穆桂英-刀马旦-你本是杨家传宗将-小哭01][P]-gezixi_fs2midi_per_fm_adv_m_discs_spk_id.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<h3 id="peking-synthesis">Peking synthesis</h3>
+<br>
+
+<p><ruby>我本是一穷儒啊</ruby></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Recoding</th>
+<th style="text-align: center">Diffsinger</th>
+<th style="text-align: center">Fastspeech2</th>
+<th style="text-align: center">DurIAN</th>
+<th style="text-align: center">ours</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/gt/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/diffsinger/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/fastspeech2/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm-0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/ours/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_0.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><ruby>冒犯了老太师府门庭</ruby></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Recoding</th>
+<th style="text-align: center">Diffsinger</th>
+<th style="text-align: center">Fastspeech2</th>
+<th style="text-align: center">DurIAN</th>
+<th style="text-align: center">ours</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/gt/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_1.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/diffsinger/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_1.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/fastspeech2/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_1.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm-1.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/ours/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_1.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<p><ruby>念卑人结发糟糠</ruby></p>
+<table><thead>
+<tr>
+<th style="text-align: center">Recoding</th>
+<th style="text-align: center">Diffsinger</th>
+<th style="text-align: center">Fastspeech2</th>
+<th style="text-align: center">DurIAN</th>
+<th style="text-align: center">ours</th>
+</tr></thead><tbody>
+<tr>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/gt/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/diffsinger/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/fastspeech2/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/durian/lseh-Wo_ben_shi-Qiong_lin_yan-qm-2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+<td style="text-align: center"><audio controls="controls"><source src="../audio/jingju/ours/lseh-Wo_ben_shi-Qiong_lin_yan-qm_segment_2.wav" autoplay="">Your browser does not support the audio element.</audio></td>
+</tr>
+</tbody></table>
+
+<h2 id="dataset-info">Dataset Info</h2>
+<br>
+<img src="../img/gezixi/singer_info.png" width="60%" height="40px">
+
+<h2 id="related-works">Related Works</h2>
+<p>
+<a href="https://arxiv.org/abs/2006.04558">FastSpeech 2: Fast and High-Quality End-to-End Text to Speech</a><br>	
+<a href="https://ojs.aaai.org/index.php/AAAI/article/view/21350">DiffSinger: Singing Voice Synthesis via Shallow Diffusion Mechanism</a><br>
+<a href="https://arxiv.org/abs/2211.02903">VISinger 2: High-Fidelity End-to-End Singing Voice Synthesis Enhanced by Digital Signal Processing Synthesizer</a><br>
+<a href="https://arxiv.org/abs/2008.03029">Peking Opera Synthesis via Duration Informed Attention Network</a><br>			
+</p>
+
+			</section>
+		</article>
+	</main>
+
+
+</div>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139981676-1', 'auto');
+	ga('send', 'pageview');
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+         HTML: ["input/TeX","output/HTML-CSS"],
+         TeX: {
+                Macros: {
+                         bm: ["\\boldsymbol{#1}", 1],
+                         argmax: ["\\mathop{\\rm arg\\,max}\\limits"],
+                         argmin: ["\\mathop{\\rm arg\\,min}\\limits"]},
+                extensions: ["AMSmath.js","AMSsymbols.js"],
+                equationNumbers: { autoNumber: "AMS" } },
+         extensions: ["tex2jax.js"],
+         jax: ["input/TeX","output/HTML-CSS"],
+         tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true },
+         "HTML-CSS": { availableFonts: ["TeX"],
+                       linebreaks: { automatic: true } }
+     });
+ </script>
+
+ <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+       tex2jax: {
+         skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+       }
+     });
+ </script>
+
+ <script type="text/javascript" async
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML">
+ </script>
+
+
+
+
+</body>
+</html>
